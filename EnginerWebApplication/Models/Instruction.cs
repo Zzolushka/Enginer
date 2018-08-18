@@ -10,12 +10,14 @@ namespace EnginerWebApplication.Data
 {
     public class Instruction
     {
-        [Key]
+        [Key] 
         public int InstructionId { get; set; }
 
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        public string Image { get; set; }
 
         [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }

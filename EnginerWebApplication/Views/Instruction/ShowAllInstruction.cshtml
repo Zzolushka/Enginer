@@ -9,39 +9,29 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.InstructionId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.InstructionId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+<div class=" row">
+    @foreach (var item in Model)
+    {
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <div class="caption">
+                <div class=" text-center">
+                   <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                </div>
+
+
+        @*@Html.DisplayFor(modelItem => item.InstructionId)*@
+
+        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+
+        @*@Html.DisplayFor(modelItem => item.Name)*@
+
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+
+            </div>
+        </div>
+     </div>
+     }
+</div>
