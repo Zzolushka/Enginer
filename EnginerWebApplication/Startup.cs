@@ -33,6 +33,24 @@ namespace EnginerWebApplication
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication()
+                .AddVkontakte(o =>
+                {
+                    o.ClientId = "6653426";
+                    o.ClientSecret = "R56LMFEYk0Ws4KlLbNW2";
+                    o.Scope.Add("email");
+                });
+                //.AddOAuth("vk", o =>
+                //{
+                //    o.ClientId = "6653426";
+                //    o.ClientSecret = "R56LMFEYk0Ws4KlLbNW2";
+                //    o.Scope.Add("email");
+                //});
+
+
+
+
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 

@@ -15,6 +15,8 @@ namespace EnginerWebApplication.Data
         {
         }
 
+        public DbSet<Instruction> Instructions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
